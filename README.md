@@ -3,19 +3,23 @@
 ## Pré-requis : installer l'environnement Docker du projet
 
 -   Installer Docker, et s'assurer qu'il tourne en local sur votre machine
+
     ```
     docker info
     ```
-    
-    Installez Docker via le [site officiel de Docker](https://docs.docker.com/get-docker/). 
-    
+
+    Installez Docker via le [site officiel de Docker](https://docs.docker.com/get-docker/).
+
     Pour les Windows, choisissez l'option d'installation de Docker **avec WSL 2**, qu'il vous faudra donc avoir installé au préalable. Voir la [doc officielle de WSL 2](https://learn.microsoft.com/fr-fr/windows/wsl/install).
 
 ---
+
 -   Ouvrir le projet dans VSCode
 
 ---
+
 -   Copier le fichier `.env.example` vers `.env`
+
     ```
     cp .env.example .env
     ```
@@ -23,10 +27,12 @@
     ❗️ Cette étape est **essentielle** pour permettre la bonne configuration de l'environnement Docker du projet.
 
 ---
+
 -   Installer l'extension VSCode "Dev Containers"
 
 ---
--   Ré-ouvrir le projet dans VSCode **dans Docker** avec la commande "Open in Dev Containers"
+
+-   Ré-ouvrir le projet dans VSCode **dans Docker** avec la commande "Reopen in Container"
 
     Le projet s'ouvre normalement dans une nouvelle fenêtre VSCode, et démarre le téléchargement des images Docker, puis la construction et l'exécution des containers associés. Cela peut prendre quelques minutes en fonction de la bande passante réseau et de la puissance de votre machine.
 
@@ -41,6 +47,7 @@
     ❓ Observez-bien le prompt de votre terminal VSCode. Selon vous, où s'exécute ce terminal ?
 
 ---
+
 -   Installer les dépendances PHP via `composer`
 
     ```
@@ -52,6 +59,7 @@
     ❓ Selon vous, doit-on commiter ce dossier `vendor` dans le git du projet ?
 
 ---
+
 -   Lancer le serveur web interne à Laravel
 
     ```
@@ -71,6 +79,7 @@
     ❓ En inspectant le `docker-compose.json` (et éventuellement le `.env`) pouvez-vous en déduire l'url de connexion à "pgAdmin", ainsi que ses identifiants de connexion ?
 
 ---
+
 -   Une fois connecté à "pgAdmin", configurer la connexion à votre base de données locale, en ajoutant un nouveau "server".
 
     Les identifiants de connexion sont les mêmes que ceux configurés dans le `docker-compose.json` (et le `.env`).
@@ -80,6 +89,7 @@
     🎉 Une fois connecté, vous devriez voir une base nommée `microblogging` (i.e le nom correspondant à la variable `DB_DATABASE` du `.env`). Notez que la base existe mais est vide.
 
 ---
+
 -   Initialiser la base de données, en effectuant les migrations Laravel existantes par défaut.
 
     ```
@@ -87,8 +97,6 @@
     ```
 
     À ce stade, observez les tables créées dans votre base PG, et comprenez le lien avec les fichiers présents dans le dossier `database/migrations` du projet.
-
-
 
 ## À propos de Laravel
 
