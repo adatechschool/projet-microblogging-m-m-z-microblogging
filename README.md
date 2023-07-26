@@ -40,7 +40,7 @@
 
     ❓ Une fois terminé, votre projet tourne "sous Docker". Selon vous, qu'est ce que cela signifie ?
 
-    ❓ Observez également les extensions VSCode installées, qui ne sont plus vos mêmes habituelles. Comment est ce possible ?
+    ❓ Observez également les extensions VSCode installées. D'où viennent ces extensions PHP / Laravel ?
 
 
 ## Démarrer l'application Laravel
