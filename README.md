@@ -42,7 +42,6 @@
 
     ❓ Observez également les extensions VSCode installées. D'où viennent ces extensions PHP / Laravel ?
 
-
 ## Démarrer l'application Laravel
 
 -   Ouvrir le terminal de VSCode.
@@ -89,13 +88,13 @@
 
 -   Accéder à l'interface d'admin "pgAdmin"
 
-    ❓ En inspectant le `docker-compose.json` (et éventuellement le `.env`) pouvez-vous en déduire l'url de connexion à "pgAdmin", ainsi que ses identifiants de connexion ?
+    ❓ En inspectant le `docker-compose.yml` (et éventuellement le `.env`) pouvez-vous en déduire l'url de connexion à "pgAdmin", ainsi que ses identifiants de connexion ?
 
 ---
 
 -   Une fois connecté à "pgAdmin", configurer la connexion à votre base de données locale, en ajoutant un nouveau "server".
 
-    Les identifiants de connexion sont les mêmes que ceux configurés dans le `docker-compose.json` (et le `.env`).
+    Les identifiants de connexion sont les mêmes que ceux configurés dans le `docker-compose.yml` (et le `.env`).
 
     ❗️ Un détail important lié à Docker : le "host" de connexion correspond à l'url du PostgreSQL **à l'intérieur** du réseau Docker. Plutôt que de chercher l'adresse IP interne de votre PG (ce qui est tout à fait possible si vous avez envie d'un défi supplémentaire), vous pouvez utiliser directement le nom défini au sein du `docker-compose.yml` pour le service PG (= `pgsql`).
 
