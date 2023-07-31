@@ -14,7 +14,9 @@
 
 ---
 
--   Ouvrir le projet dans VSCode
+-   Ouvrir le projet dans VSCode. Les fichiers et dossiers du repo doivent constituer la racine de l'arborescence du projet sous VS Code.
+
+    ❗️ Ouvrez bien le projet directement depuis le dossier racine, via "Open Folder", ou via `code .`. L'extension Dev Container ne fonctionne pas depuis un "workspace", donc n'ouvrez pas le dossier via "Add Folder to Workspace".
 
 ---
 
