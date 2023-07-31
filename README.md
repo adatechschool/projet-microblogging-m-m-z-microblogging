@@ -65,7 +65,7 @@
 -   Générer votre "application encryption key" nécessaire à toute application Laravel
 
     ```
-    php artisan key:generate`
+    php artisan key:generate
     ```
 
     Cette commande génère une clé qui est ensuite stockée dans la variable `APP_KEY` de votre `.env`.
