@@ -1,11 +1,11 @@
 // https://aka.ms/devcontainer.json
 {
-	"name": "Existing Docker Compose (Extend)",
+	"name": "PHP-8 Laravel-10",
 	"dockerComposeFile": [
 		"../docker-compose.yml"
 	],
 	"service": "laravel.app",
-	"workspaceFolder": "/var/www/html",
+	"workspaceFolder": "/app",
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -20,9 +20,8 @@
 			"settings": {}
 		}
 	},
-	"remoteUser": "sail",
-	"postCreateCommand": "chown -R 1000:1000 /var/www/html"
-	// "forwardPorts": [],
-	// "runServices": [],
-	// "shutdownAction": "none",
+	"forwardPorts": [
+		8000
+	],
+	"postCreateCommand": "sudo rm /usr/local/etc/php/conf.d/xdebug.ini"
 }
