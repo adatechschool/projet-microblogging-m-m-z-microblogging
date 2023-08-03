@@ -23,5 +23,5 @@
 	"forwardPorts": [
 		8000
 	],
-	"postCreateCommand": "sudo rm /usr/local/etc/php/conf.d/xdebug.ini"
+	"postCreateCommand": "sudo -E /bin/sh .devcontainer/entrypoint.sh"
 }
