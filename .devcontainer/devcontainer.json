@@ -4,6 +4,9 @@
 	"dockerComposeFile": [
 		"../docker-compose.yml"
 	],
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {}
+	},
 	"service": "laravel.app",
 	"workspaceFolder": "/app",
 	"customizations": {
