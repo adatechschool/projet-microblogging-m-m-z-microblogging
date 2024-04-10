@@ -1,5 +1,23 @@
 # Plateforme de micro-blogging
 
+## Pré-requis : espace disque
+
+🟡 Cette installation va mobiliser de l'ordre de 20Go d'espace disque sur votre machine. 
+
+Si c'est nécessaire, faites de la place avant de commencer.
+
+
+## Pré-requis : ports disponibles
+
+🟡 Vérifiez si vous n'avez pas déjà des services installés sur vos machines pour les projets précédents et qui pourraient interférer avec le bon fonctionnement de ce projet. En particulier :
+- PostgreSQL sur le port 5432
+- un serveur web ou autre sur les ports 8000 et 5050
+
+Comment le savoir ? en passant en revue tous les ports en écoute sur votre machine. Voici comment faire sous [Windows](https://www.howtogeek.com/28609/how-can-i-tell-what-is-listening-on-a-tcpip-port-in-windows/), sous [Linux](https://linuxize.com/post/check-listening-ports-linux/) et sous [Mac](https://osxdaily.com/2023/05/15/find-what-listening-tcp-port-mac/).
+
+Si vous trouver un service qui tourne déjà sur ces ports, désactivez le.
+
+
 ## [Windows] Pré-requis : installer WSL 2
 
 🟡 Si vous ne l'avez toujours pas fait, installez WSL 2. Voir la [doc officielle de WSL 2](https://learn.microsoft.com/fr-fr/windows/wsl/install).
