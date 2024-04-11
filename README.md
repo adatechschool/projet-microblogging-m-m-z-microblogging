@@ -15,7 +15,7 @@ Si c'est nécessaire, faites de la place avant de commencer.
 
 Comment le savoir ? en passant en revue tous les ports en écoute sur votre machine. Voici comment faire sous [Windows](https://www.howtogeek.com/28609/how-can-i-tell-what-is-listening-on-a-tcpip-port-in-windows/), sous [Linux](https://linuxize.com/post/check-listening-ports-linux/) et sous [Mac](https://osxdaily.com/2023/05/15/find-what-listening-tcp-port-mac/).
 
-Si vous trouver un service qui tourne déjà sur ces ports, désactivez le.
+Si vous trouvez un service qui tourne déjà sur ces ports, désactivez-le.
 
 
 ## [Windows] Pré-requis : installer WSL 2
