@@ -92,6 +92,8 @@ cp .env.example .env
 
 ❗️ Cette étape est **essentielle** pour permettre la bonne configuration de l'environnement Docker du projet.
 
+🔴 Si vous rencontrez une erreur qui vous indique que l'utilisateur n'existe pas (exemple: "sail user not found", ou impossible de se connecter à la BDD), cela signifie que vous n'avez pas bien copié votre `.env` **AVANT** d'ouvrir le projet dans VSCode et dans le container. Votre BDD n'a donc probablement pas bien été initialisée. Pour corriger cela, il faut supprimer **toutes les images & tous les containers** avant de relancer la commande "Reopen in Container".
+
 ---
 
 🟡 Installer l'extension VSCode "Dev Containers"
