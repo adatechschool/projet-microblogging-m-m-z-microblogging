@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,4 +34,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+/* utiliser le resource (incluant toutes les requetes CRUD dans le controller) pour choisir seulement certaines action pour les routes,
+Ici on choisi index pour la requête get (route name : posts.index) pour afficher un form et une list des posts
+et on choisi store pour la requête post (route name : posts.store) pour enregistrer un post dans la db*/
+Route::resource('posts', PostController::class)
+    ->only(['index', 'store'])
+    ->middleware(['auth', 'verified']);
+
 require __DIR__.'/auth.php';
+
+Route::get('/users', function () {
+    return view('users');
+});
