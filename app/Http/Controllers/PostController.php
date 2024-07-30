@@ -13,8 +13,11 @@ class PostController extends Controller
      */
     public function index() : Response
     {
-        //
-        return response('Hello, World!');
+        ////On récupère tous les Post
+    $posts = Post::latest()->get();
+    $array = json_decode($posts, true);
+
+        return response($array);
     }
 
     /**
