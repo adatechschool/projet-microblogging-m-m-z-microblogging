@@ -24,12 +24,14 @@ class PostController extends Controller
     }
     public function handleForm(Request $request): string 
     {
+        $user_id = $request->user()->id;
         $input = $request->all();
         // var_dump = console.log //
         var_dump($input);
         $givenText = $input['typedText'];
+        $postedImage = $input['image'];
         //change user-id to logged in user_id //
-        Post::create(['text' => $givenText, 'user_id' => 13, 'image_url' => 'http://']);
+        Post::create(['text' => $givenText, 'user_id' => $user_id, 'image_url' => $postedImage]);
         return "Coucou";
     }
 }
