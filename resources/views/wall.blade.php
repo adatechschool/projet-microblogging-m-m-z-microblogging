@@ -1,36 +1,40 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Wall') }}
+        </h2>
+    </x-slot>
 
-@section('content')
-<div class="container">
-    <h2 class="mb-4">{{ $user->name }}'s Wall</h2>
+    <div class="container">
+        <h2 class="mb-4">{{ $user->name }}'s Wall</h2>
 
-    <!-- Section Biographie -->
-    <div class="mb-4">
-        <h3>Biography</h3>
-        <p>{{ $user->biography }}</p>
-    </div>
+        <!-- Section Biographie -->
+    {{--     <div class="mb-4">
+            <h3>Biography</h3>
+            <p>{{ $user->biography }}</p>
+        </div> --}}
 
-    <!-- Section des Posts -->
-    <div class="mb-4">
-        <h3>Posts</h3>
-        @forelse ($posts as $post)
-            <div class="card mb-3">
-                <div class="card-body">
-                    <p>{{ $post->content }}</p>
-                    @if ($post->image)
-                        <img src="{{ asset('storage/' . $post->image) }}" alt="Post Image" class="img-fluid">
-                    @endif
-                    <p class="text-muted">Posted at {{ $post->created_at->format('d M Y, H:i') }}</p>
+        <!-- Section des Posts -->
+        <div class="mb-4">
+            <h3>Posts</h3>
+            @forelse ($posts as $post)
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <p>{{ $post->content }}</p>
+                        @if ($post->image)
+                            <img src="{{ asset('storage/' . $post->image) }}" alt="Post Image" class="img-fluid">
+                        @endif
+                        <p class="text-muted">Posted at {{ $post->created_at->format('d M Y, H:i') }}</p>
+                    </div>
                 </div>
-            </div>
-        @empty
-            <p>No posts yet.</p>
-        @endforelse
+            @empty
+                <p>No posts yet.</p>
+            @endforelse
 
-        <!-- Pagination Links -->
-        <div class="d-flex justify-content-center">
-            {{ $posts->links() }}
+            <!-- Pagination Links -->
+            <div class="d-flex justify-content-center">
+                {{ $posts->links() }}
+            </div>
         </div>
     </div>
-</div>
-@endsection
+</x-app-layout>
