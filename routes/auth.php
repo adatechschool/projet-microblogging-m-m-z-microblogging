@@ -1,5 +1,6 @@
 <?php
 
+
 /* Import des controllers pour l'authentification */
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
@@ -12,7 +13,9 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
+
 /* Routes accessibles (actions) quand aucun utilisateur est connecté*/
+
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
                 ->name('register');
@@ -37,7 +40,9 @@ Route::middleware('guest')->group(function () {
                 ->name('password.store');
 });
 
+
 /* Routes accessibles (actions) seulement si un utilisateur est connecté */
+
 Route::middleware('auth')->group(function () {
     Route::get('verify-email', EmailVerificationPromptController::class)
                 ->name('verification.notice');
