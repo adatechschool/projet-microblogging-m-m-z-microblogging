@@ -69,10 +69,12 @@ class PostController extends Controller
         //
 }
 
+
     public function list(): View
     {
         $posts = Post::all();
         return view('list-posts',['allposts' => $posts]);
+
     }
 
     public function showForm(): View

@@ -19,8 +19,7 @@ class PostFactory extends Factory
     /*  */
 
     protected $model = \App\Models\Post::class;
-    
-    /**
+      /**
      * Define the model's default state.
      *
      * @return array<string, mixed>
