@@ -88,7 +88,7 @@ class PostController extends Controller
         $givenText = $input['typedText'];
         $postedImage = $input['image'];
         //change user-id to logged in user_id //
-        Post::create(['text' => $givenText, 'user_id' => $user_id, 'image_url' => $postedImage]);
+        Post::create(['content' => $givenText, 'user_id' => $user_id, 'picture' => $postedImage]);
         return 'Coucou';
     }
 }
