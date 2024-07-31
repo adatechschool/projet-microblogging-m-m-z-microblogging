@@ -24,7 +24,8 @@
 		}
 	},
 	"forwardPorts": [
-		8000
+		8000,
+		5173
 	],
 	"postCreateCommand": "sudo -E /bin/sh .devcontainer/entrypoint.sh"
 }

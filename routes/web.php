@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,8 +41,14 @@ Route::resource('posts', PostController::class)
     ->only(['index', 'store'])
     ->middleware(['auth', 'verified']);
 
-require __DIR__.'/auth.php';
-
 Route::get('/users', function () {
     return view('users');
 });
+
+Route::get('/posts', [PostController::class, 'list']);
+Route::post('/posts', [PostController::class, 'create']);
+
+Route::get('/posts/new', [PostController::class, 'showForm']);
+Route::post('/posts/new', [PostController::class, 'handleForm']);
+
+require __DIR__.'/auth.php';
