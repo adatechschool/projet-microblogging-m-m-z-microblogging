@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components;
+/* namespace App\View\Components;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -8,21 +8,21 @@ use App\Models\Post; // important d'importer le modèle Post
 use Illuminate\View\Component;
 
 class UserPosts extends Component
-{
+{ */
     /**
      * Create a new component instance.
      */
-    public $user;
+   /*  public $user;
 
     public function __construct($user)
     {
         $this->user = $user;
-    }
+    } */
 
     /**
      * Get the view / contents that represent the component.
      */
-    public function render(): View|Closure|string
+   /*  public function render(): View|Closure|string
     {
 
                 // Récupérer les posts de l'utilisateur avec pagination
@@ -32,5 +32,24 @@ class UserPosts extends Component
 
    return view('components.user-posts', compact('posts'));
  
+    }
+} */
+
+namespace App\View\Components;
+
+use Illuminate\View\Component;
+
+class UserPosts extends Component
+{
+    public $posts;
+
+    public function __construct($posts)
+    {
+        $this->posts = $posts;
+    }
+
+    public function render()
+    {
+        return view('components.user-posts');
     }
 }
