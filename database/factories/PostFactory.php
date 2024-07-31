@@ -19,8 +19,7 @@ class PostFactory extends Factory
     /*  */
 
     protected $model = \App\Models\Post::class;
-    
-    /**
+      /**
      * Define the model's default state.
      *
      * @return array<string, mixed>
@@ -31,7 +30,7 @@ class PostFactory extends Factory
         return [
             'user_id' => User::inRandomOrder()->first()->id,
             'content' => fake()->paragraph(),
-            'image' => fake()->imageURL(),
+            'picture' => fake()->imageURL(),
             'created_at' => now(),
         ];
     }
