@@ -11,13 +11,13 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index() : Response
-    {
-        ////On récupère tous les Post
-    $posts = Post::latest()->get();
-    $array = json_decode($posts, true);
+    public function index() {
 
-        return response($array);
+    //On récupère tous les Post
+    $posts = Post::latest()->get();
+
+    // On transmet les Post à la vue
+    return $posts;
     }
 
     /**
