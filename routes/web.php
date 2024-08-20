@@ -72,4 +72,8 @@ Route::get('/posts', [PostController::class, 'index']);
 Route::get('/posts/new', [PostController::class, 'showForm']);
 Route::post('/posts/new', [PostController::class, 'handleForm']);
 
+// redirect the submitted post to the proper "landing" page
+// use Marine's route to the personal well
+Route::get('/posts/{postId}', [PostController::class, 'showOnePost']);
+
 require __DIR__.'/auth.php';
