@@ -37,16 +37,16 @@ Route::middleware('auth')->group(function () {
 /* utiliser le resource (incluant toutes les requetes CRUD dans le controller) pour choisir seulement certaines action pour les routes,
 Ici on choisi index pour la requête get (route name : posts.index) pour afficher un form et une list des posts
 et on choisi store pour la requête post (route name : posts.store) pour enregistrer un post dans la db*/
-Route::resource('posts', PostController::class)
-    ->only(['index', 'store'])
-    ->middleware(['auth', 'verified']);
+// Route::resource('/posts', PostController::class)
+//     ->only(['index', 'store'])
+//     ->middleware(['auth', 'verified']);
 
 Route::get('/users', function () {
     return view('users');
 });
 
-Route::get('/posts', [PostController::class, 'list']);
-Route::post('/posts', [PostController::class, 'create']);
+Route::get('/posts', [PostController::class, 'index']);
+//Route::post('/posts', [PostController::class, 'create']);
 
 Route::get('/posts/new', [PostController::class, 'showForm']);
 Route::post('/posts/new', [PostController::class, 'handleForm']);

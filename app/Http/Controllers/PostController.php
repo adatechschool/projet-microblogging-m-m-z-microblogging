@@ -12,13 +12,13 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index() {
+    public function index():View {
 
     //On récupère tous les Post
-    $posts = Post::latest()->get();
-
+    $posts = Post::all();
+    
     // On transmet les Post à la vue
-    return $posts;
+    return view('posts', compact('posts'));
     }
 
     /**
