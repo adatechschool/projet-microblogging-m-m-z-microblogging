@@ -43,9 +43,9 @@ Route::middleware('auth')->group(function () {
 });
 
 
-//User Wall
+//User Personal Wall
 Route::middleware('auth')->group(function () {
-    Route::get('/wall', [UserController::class, 'showWall'])->name('wall.show');
+    Route::get('/wall', [UserController::class, 'showWall'])->name('personal.wall');
 });
 
 //test
