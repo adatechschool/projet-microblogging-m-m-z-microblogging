@@ -18,7 +18,7 @@ class PostController extends Controller
     $posts = Post::all();
     
     // On transmet les Post à la vue
-    return view('posts', compact('posts'));
+    return view('feed', compact('posts'));
     }
 
     /**
