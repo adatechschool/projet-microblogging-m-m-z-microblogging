@@ -1,8 +1,8 @@
 <div class="bg-gray-100 px-2 py-2">
     <article class="mx-auto my-2 flex max-w-md flex-col rounded-2xl bg-white px-4 shadow md:max-w-5xl md:flex-row md:items-center">
         <div class="shrink-0 my-4 md:mr-8 md:max-w-sm">
-            @if ($post->image)
-                <img class="rounded-2xl" src="{{ asset('storage/' . $post->image) }}" alt="Post Image" />
+            @if ($post->picture)
+                <img class="rounded-2xl" src="{{($post->picture) }}" alt="Post Image" />
             @endif
         </div>
         <div class="py-4 sm:py-8">
