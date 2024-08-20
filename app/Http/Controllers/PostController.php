@@ -67,14 +67,14 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         //
-}
+    }
 
 
-    public function list(): View
+    public function list(Request $request): View
     {
-        $posts = Post::all();
-        return view('list-posts',['allposts' => $posts]);
-
+        $user_id = $request->user()->id;
+        $posts = Post::where('user_id', $user_id)->get();
+        return view('list-posts', ['allposts' => $posts]);
     }
 
     public function showForm(): View
@@ -88,9 +88,11 @@ class PostController extends Controller
         // var_dump = console.log //
         var_dump($input);
         $givenText = $input['typedText'];
-        $postedImage = $input['image'];
+        $imageId = $request->file('image')->store('public');
+        var_dump($imageId);
+        //$postedImage = $input['image'];
         //change user-id to logged in user_id //
-        Post::create(['content' => $givenText, 'user_id' => $user_id, 'picture' => $postedImage]);
+        Post::create(['content' => $givenText, 'user_id' => $user_id, 'picture' => $imageId]);
         return 'Coucou';
     }
 }
