@@ -67,14 +67,14 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         //
-}
+    }
 
 
-    public function list(): View
+    public function list(Request $request): View
     {
-        $posts = Post::all();
-        return view('list-posts',['allposts' => $posts]);
-
+        $user_id = $request->user()->id;
+        $posts = Post::where('user_id', $user_id)->get();
+        return view('list-posts', ['allposts' => $posts]);
     }
 
     public function showForm(): View
