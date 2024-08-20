@@ -66,10 +66,10 @@ Route::get('/users', function () {
     return view('users');
 });
 
-Route::get('/posts', [PostController::class, 'index']);
+Route::get('/feed', [PostController::class, 'index'])->name('feed');
 //Route::post('/posts', [PostController::class, 'create']);
 
-Route::get('/posts/new', [PostController::class, 'showForm']);
-Route::post('/posts/new', [PostController::class, 'handleForm']);
+Route::get('/publish', [PostController::class, 'showForm'])->name('publish');
+Route::post('/publish', [PostController::class, 'handleForm']);
 
 require __DIR__.'/auth.php';
