@@ -13,4 +13,7 @@
         <input type="file" id="imageToPost" name="image" accept="image/png, image/jpeg" />
     </div>
 
+    @if (isset($error))
+        <p>Please fill in one of the blanks by adding an image, a text or both!</p>
+    @endif
 </form>

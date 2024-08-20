@@ -88,11 +88,30 @@ class PostController extends Controller
         // var_dump = console.log //
         var_dump($input);
         $givenText = $input['typedText'];
-        $imageId = $request->file('image')->store('public');
-        var_dump($imageId);
-        //$postedImage = $input['image'];
-        //change user-id to logged in user_id //
-        Post::create(['content' => $givenText, 'user_id' => $user_id, 'picture' => $imageId]);
-        return 'Coucou';
+        $image = $request->file('image');
+
+        var_dump($givenText);
+        var_dump($image);
+
+        if ($givenText == null && $image == null) {
+            return view('showForm', ['error' => true]);
+        }
+
+        if ($image) {
+            $imageId = $image->store('public');
+        } else {
+            $imageId = null;
+        }
+
+        //change user-id to logged-in user_id //
+        $newPost = Post::create(['content' => $givenText, 'user_id' => $user_id, 'picture' => $imageId]);
+        var_dump($newPost->id);
+        return redirect('/posts/' . $newPost->id);
+    }
+
+    public function showOnePost(Request $request) {
+        $post = Post::find($request->postId);
+        var_dump($post);
+        return view('showOnePost', ['post' => $post]);
     }
 }
