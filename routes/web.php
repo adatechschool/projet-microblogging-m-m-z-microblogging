@@ -71,8 +71,6 @@ Route::get('/feed', [PostController::class, 'index'])->name('feed');
 Route::get('/publish', [PostController::class, 'showForm'])->name('publish');
 Route::post('/publish', [PostController::class, 'handleForm']);
 
-// redirect the submitted post to the proper "landing" page
-// use Marine's route to the personal well
 Route::get('/posts/{postId}', [PostController::class, 'showOnePost']);
 
 require __DIR__.'/auth.php';

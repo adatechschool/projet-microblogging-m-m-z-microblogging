@@ -89,11 +89,11 @@ class PostController extends Controller
         $user_id = $request->user()->id;
         $input = $request->all();
         // var_dump = console.log //
-        var_dump($input);
+        //var_dump($input);
         $givenText = $input['typedText'];
         $image = $request->file('image');
-        var_dump($givenText);
-        var_dump($image);
+        //var_dump($givenText);
+        //var_dump($image);
         if ($givenText == null && $image == null) {
             return view('showForm', ['error' => true]);
         }
@@ -103,9 +103,9 @@ class PostController extends Controller
             $imageId = null;
         }
         //change user-id to logged-in user_id //
+
         $newPost = Post::create(['content' => $givenText, 'user_id' => $user_id, 'picture' => $imageId]);
         var_dump($newPost->id);
-        //must decide on which route this submitted post will be shown.
         return redirect('/wall');
      }
     // public function showOnePost(Request $request) {
