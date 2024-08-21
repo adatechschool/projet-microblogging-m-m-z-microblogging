@@ -8,7 +8,7 @@
         </p>
     </x-slot>
     <div class="flex justify-center">
-        <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+        <div class="w-full sm:max-w-md mt-20 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
             <form method="post" action="/publish" enctype="multipart/form-data" class="mt-6 space-y-6">
                 <!--"enctype = tells your browser how it will send the data -->
                 @csrf
@@ -27,10 +27,12 @@
                 hover:file:bg-violet-100" accept="image/png, image/jpeg" />
                 </div>
                 <div class="flex items-center gap-4 mt-4">
+                    <div>
                     <x-primary-button>{{ __('Submit') }}</x-primary-button>
                      @if (isset($error))
-                    <p class="mt-4 vertical-align: text-bottom text-md text-slate-500 font-semibold">Please fill in one of the blanks by adding an image, a text or both!</p>
+                    <p class="mt-6 text-center line-height: 1rem text-md text-slate-500 font-semibold">Please fill in one of the blanks by adding an image, a text or both!</p>
                     @endif
+                    </div>
             </form>
         </div>
     </div>

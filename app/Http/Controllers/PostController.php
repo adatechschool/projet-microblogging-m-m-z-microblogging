@@ -86,11 +86,11 @@ class PostController extends Controller
         $user_id = $request->user()->id;
         $input = $request->all();
         // var_dump = console.log //
-        var_dump($input);
+        //var_dump($input);
         $givenText = $input['typedText'];
         $image = $request->file('image');
-        var_dump($givenText);
-        var_dump($image);
+        //var_dump($givenText);
+        //var_dump($image);
         if ($givenText == null && $image == null) {
             return view('showForm', ['error' => true]);
         }
