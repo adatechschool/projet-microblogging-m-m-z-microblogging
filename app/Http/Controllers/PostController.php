@@ -6,6 +6,7 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -83,25 +84,31 @@ class PostController extends Controller
     }
     public function handleForm(Request $request): string
     {
+        // Obtenir l'ID de l'utilisateur connecté
         $user_id = $request->user()->id;
         $input = $request->all();
         // var_dump = console.log //
         //var_dump($input);
+
+        // Récupérer les données du formulaire
         $givenText = $input['typedText'];
         $image = $request->file('image');
         //var_dump($givenText);
         //var_dump($image);
+
+        // Vérifier si aucune donnée n'a été fournie
         if ($givenText == null && $image == null) {
             return view('showForm', ['error' => true]);
         }
         if ($image) {
-            $imageId = $image->store('public');
-        } else {
-            $imageId = null;
-        }
+              // Stocker l'image et obtenir le chemin stocké
+              $path = $image->store('public/images');
+              // Obtenir l'URL relative
+              $imageUrl = Storage::url($path);
+          }
         //change user-id to logged-in user_id //
 
-        $newPost = Post::create(['content' => $givenText, 'user_id' => $user_id, 'picture' => $imageId]);
+        $newPost = Post::create(['content' => $givenText, 'user_id' => $user_id, 'picture' => $imageUrl]);
         var_dump($newPost->id);
         return redirect('/wall');
      }
