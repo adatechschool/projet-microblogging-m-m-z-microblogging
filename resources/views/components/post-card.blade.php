@@ -3,6 +3,7 @@
         <div class="shrink-0 my-4 md:mr-8 md:max-w-sm">
             @if ($post->picture)
                 <img class="rounded-2xl" src="{{asset($post->picture)}}" alt="Post Image" />
+                <!--src link to show picture -->
             @endif
         </div>
         <div class="py-4 sm:py-8">
