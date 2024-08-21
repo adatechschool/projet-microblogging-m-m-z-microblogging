@@ -62,9 +62,8 @@ et on choisi store pour la requête post (route name : posts.store) pour enregis
 //     ->only(['index', 'store'])
 //     ->middleware(['auth', 'verified']);
 
-Route::get('/users', function () {
-    return view('users');
-});
+Route::get('/users', [UserController::class,'index'])->name('allUsers');
+
 
 Route::get('/feed', [PostController::class, 'index'])->name('feed');
 //Route::post('/posts', [PostController::class, 'create']);

@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\models\User;
+// use App\models\User;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; // Import de Auth
 use App\Models\Post; // Import de Post

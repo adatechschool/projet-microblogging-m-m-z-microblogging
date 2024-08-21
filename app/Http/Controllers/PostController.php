@@ -16,6 +16,9 @@ class PostController extends Controller
 
     //On récupère tous les Post
     $posts = Post::all();
+
+    //On récupère les noms associé aux user_id
+    
     
     // On transmet les Post à la vue
     return view('feed', compact('posts'));

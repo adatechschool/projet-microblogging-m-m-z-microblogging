@@ -9,6 +9,20 @@
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
+        <!-- Biography -->
+        <div class="mt-4">
+            <x-input-label for="biography" :value="__('Biography')" />
+            <x-text-input id="biography" class="block mt-1 w-full" type="text" name="biography" :value="old('biography')" required autofocus autocomplete="biography" />
+            <x-input-error :messages="$errors->get('biography')" class="mt-2" />
+        </div>
+        
+        <!-- Avatar -->
+        <div class="mt-4">
+            <x-input-label for="avatar" :value="__('Avatar')" />
+            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+            <x-input-error :messages="$errors->get('avatar')" class="mt-2" />
+        </div>
+
         <!-- Email Address -->
         <div class="mt-4">
             <x-input-label for="email" :value="__('Email')" />
