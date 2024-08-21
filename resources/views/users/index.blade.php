@@ -11,12 +11,10 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <a href="">
-                    {{ $user->name }}
+                    {{ $user->name }}'s Biography
                     </a>
                 </div>
-                <div class="p-6 text-gray-900">
-                    {{ $user->email }}
-                </div>
+
                 <div class="p-6 text-gray-900">
                     {{ $user->biography}}
                 </div>
