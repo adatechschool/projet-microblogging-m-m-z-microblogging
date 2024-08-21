@@ -100,9 +100,9 @@ class PostController extends Controller
             $imageId = null;
         }
         //change user-id to logged-in user_id //
+
         $newPost = Post::create(['content' => $givenText, 'user_id' => $user_id, 'picture' => $imageId]);
         var_dump($newPost->id);
-        //must decide on which route this submitted post will be shown.
         return redirect('/wall');
      }
     // public function showOnePost(Request $request) {

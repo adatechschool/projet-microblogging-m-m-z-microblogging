@@ -26,16 +26,6 @@
                 file:bg-violet-50 file:text-violet-700
                 hover:file:bg-violet-100" accept="image/png, image/jpeg" />
                 </div>
-
-
-                <!--<label for="imageToPost" :value="__('Choose a file')" class="block">
-                <input id="imageToPost" name="image" accept="image/png, image/jpeg" type="file" class="mt-1 block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4
-                file:rounded-md file:border-0
-                file:text-sm file:font-semibold
-                file:bg-violet-50 file:text-violet-700
-                hover:file:bg-violet-100"/>
-                </label>-->
-
                 <div class="flex items-center gap-4 mt-4">
                     <x-primary-button>{{ __('Submit') }}</x-primary-button>
                      @if (isset($error))
