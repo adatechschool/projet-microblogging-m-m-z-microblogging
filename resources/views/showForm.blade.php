@@ -18,46 +18,28 @@
                     <x-input-label for="typed_text" :value="__('Type your text')" />
                     <x-text-input id="typed_text" name="typedText" type="text" class="mt-1 block w-full" autocomplete="typedText" />
                 </div>
-                <!--<div>
+                <div>
                     <x-input-label for="imageToPost" :value="__('Choose a picture')" />
-                    <x-text-input id="imageToPost" name="image" type="file" class="mt-1 block w-full" accept="image/png, image/jpeg" />
-                </div>-->
-
-                <form class="flex items-center space-x-6">
-                <label forfor="imageToPost" :value="__('Choose a picture')" class="block">
-                <input id="imageToPost" name="image" class="mt-1 block w-full text-sm text-slate-500" accept="image/png, image/jpeg" type="file"
-                file:mr-4 file:py-2 file:px-4
+                    <x-text-input id="imageToPost" name="image" type="file" class="mt-1 block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4
                 file:rounded-md file:border-0
                 file:text-sm file:font-semibold
                 file:bg-violet-50 file:text-violet-700
-                hover:file:bg-violet-100/>
-                </input>
-                </label>
-                </form>
+                hover:file:bg-violet-100" accept="image/png, image/jpeg" />
+                </div>
 
 
-
-
-                <!--<form class="flex items-center space-x-6">-->
-  <!--<label class="block">
-    <input type="file" accept="image/png, image/jpeg" nameclass="mt-4 block w-full text-sm text-slate-500
-      file:mr-4 file:py-2 file:px-4
-      file:rounded-md file:border-0
-      file:text-sm file:font-semibold
-      file:bg-violet-50 file:text-violet-700
-      hover:file:bg-violet-100
-    "/>
-  </label>
-</form>-->
-
-
-
-
+                <!--<label for="imageToPost" :value="__('Choose a file')" class="block">
+                <input id="imageToPost" name="image" accept="image/png, image/jpeg" type="file" class="mt-1 block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4
+                file:rounded-md file:border-0
+                file:text-sm file:font-semibold
+                file:bg-violet-50 file:text-violet-700
+                hover:file:bg-violet-100"/>
+                </label>-->
 
                 <div class="flex items-center gap-4 mt-4">
                     <x-primary-button>{{ __('Submit') }}</x-primary-button>
                      @if (isset($error))
-                    <p>Please fill in one of the blanks by adding an image, a text or both!</p>
+                    <p class="mt-4 vertical-align: text-bottom text-md text-slate-500 font-semibold">Please fill in one of the blanks by adding an image, a text or both!</p>
                     @endif
             </form>
         </div>
