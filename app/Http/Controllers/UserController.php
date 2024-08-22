@@ -23,4 +23,10 @@ class UserController extends Controller
 
         return view('wall', compact ('user','posts'));
     }
+
+    public function showUserWall(User $user)
+{
+    $posts = $user->posts()->latest()->paginate(10); // Récupère les posts de l'utilisateur, triés du plus récent au plus ancien
+    return view('wall', compact('user', 'posts'));
+}
 }

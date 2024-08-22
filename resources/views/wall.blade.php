@@ -1,13 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Wall') }}
+        <h2 class="text-2xl font-bold mb-4">{{ $user->name }}'s Wall</h2>
         </h2>
     </x-slot>
 
     <div class="container">
-        <h2 class="mb-4">{{ $user->name }}'s Wall</h2>
-
         <!-- Section Biographie -->
         {{-- <div class="mb-4">
             <h3>Biography</h3>

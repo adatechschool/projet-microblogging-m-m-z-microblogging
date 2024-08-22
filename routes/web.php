@@ -48,6 +48,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/wall', [UserController::class, 'showWall'])->name('personal.wall');
 });
 
+//Specific user's wall
+Route::get('/users/{user}', [UserController::class, 'showUserWall'])->name('user.profile');
+
+
 //test
 Route::get('/test', function () {
     return view('test');

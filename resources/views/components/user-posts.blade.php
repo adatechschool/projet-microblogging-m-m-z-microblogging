@@ -1,5 +1,4 @@
 <div class="mb-4">
-    <h3>Posts</h3>
     @forelse ($posts as $post)
         <x-post-card :post="$post" />
     @empty

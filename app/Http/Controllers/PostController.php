@@ -16,7 +16,7 @@ class PostController extends Controller
     public function index():View {
 
     //On récupère tous les Post
-    $posts = Post::all();
+    $posts = Post::latest()->paginate(10);
     
     // On transmet les Post à la vue
     return view('feed', compact('posts'));
