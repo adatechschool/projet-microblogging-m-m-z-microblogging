@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="container mx-auto px-4 py-6">
-        <h2 class="text-2xl font-bold mb-4">Fil d'actualités</h2>
+        <h2 class="text-2xl font-bold mb-4">Feed</h2>
 
         <!-- Section des Posts -->
         <div class="mb-4">
